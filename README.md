@@ -9,6 +9,6 @@ modelo es formulado como uno de programnación estocástica de dos etapas, donde
 variables de decisión de primer etapa son que plantas abrir (variables binarias), las 
 de segundo etapa corresponden a los envíos y las no entregas.
 El segundo modelo consiste en la relajación de un problema multi-etapas a uno de dos
-etapas para planeación de producción, las variables de primer etapa son los recursos a
+etapas para planeación de producción (Lot-sizing), las variables de primer etapa son los recursos a
 usar previo al inicio de la producción.
 Se usa Gurubi y CPLEX.
