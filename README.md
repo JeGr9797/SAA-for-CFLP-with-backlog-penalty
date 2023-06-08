@@ -27,7 +27,7 @@ Las restricciones de no anticipación se pueden formular como:
 $y_{i}^s = y_{i}^{s-1}\ ∀\ i \in I, s \geq 2$\
 $y_{i}^s = \sum_{s \in S}P^sy_{i}^s ∀\ i \in I$
 
-Se usa Gurobi (https://www.gurobi.com/) y CPLEX (https://www.ibm.com/mx-es/analytics/cplex-optimizer) mediante DOCPLEX (https://pypi.org/project/docplex/)
+Se usa Gurobi (https://www.gurobi.com/) y CPLEX (https://www.ibm.com/mx-es/analytics/cplex-optimizer) mediante DOCPLEX (https://pypi.org/project/docplex/) \
 Se hace una implementación basada en la descomposición de Benders en Gurobi, la formulación matemática es la siguiente.\
 El problema maestro es:
 $\min \sum_{s \in S}\sum_{i \in I}F_iy_{i}^s+\sum_{s \in S}P^s\theta^s$\
