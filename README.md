@@ -45,7 +45,7 @@ usar previo al inicio de la producción.
 Se usa Gurubi y CPLEX.\
 Para el modelo multi-etapas se utiliza Lingo 20.0, la formulación del modelo multi-etapas es la siguiente:\
 
-$\min \sum_{s \in S}P^s\sum_{i \in \ I^{ci}}\sum_{r \in R}W_{i,r}^sC_r\abs{T}+\sum_{s \in S}P^s\sum_{i \in \ I^{ci}}\sum_{t \in T}(X_{i,t}^sC_x+Inv_{i,t}^sC_{Inv})$\
+$\min \sum_{s \in S}P^s\sum_{i \in \ I^{ci}}\sum_{r \in R}W_{i,r}^sC_r \abs{T}+\sum_{s \in S}P^s\sum_{i \in \ I^{ci}}\sum_{t \in T}(X_{i,t}^sC_x+Inv_{i,t}^sC_{Inv})$\
 $X_{i,t}^s+Inv_{i,0}=d_{i,t}+Inv_{i,t}^s \ \forall t = 1, i \in I^{ci}, s\in S$\
 $X_{i,t}^s+Inv_{i,t-1}^s=d_{i,t}+Inv_{i,t}^s \ \forall t \geq 2, i \in I^{ci}, s\in S$\
 $X_{i,t}^{s}\le W_{i,r}^s\alpha_r^{s} \ \forall t \in T, i \in I^{ci},  s\in S$\
