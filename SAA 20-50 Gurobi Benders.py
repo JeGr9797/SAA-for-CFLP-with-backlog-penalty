@@ -11,7 +11,8 @@ Iteraciones = 20
 #Iniciar donde se guardan valores funcion objetivo
 obj_values = []
 for h in range(Iteraciones):
-    #Leer informacion
+    #Leer informacion de costos c_ij
+    #Aqui el path cambia donde se guarde el archivo excel
     df1 = pd.read_excel(r"C:\Users\jegr9\OneDrive\Escritorio\MCI\Tesis\Test SCFLP\20-50 Benders\20­50a.xlsx", sheet_name=1,usecols="A:AX",nrows=20)
 
     # Definir constantes del modelo
