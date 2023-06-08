@@ -60,11 +60,11 @@ Los índices del modelo son: $T$ conjunto de periodos con $t∈T$; $R$ conjunto 
 Los parámetros del modelo son: $d_{i,t}$ demanda para cada periodo y planta seleccionada; $Inv_{i,0}$ es el inventario inicial en cada planta; $α_r^s$ la tasa de producción para cada recurso (recursos producidos por trabajador para actividad específica en unidad de tiempo), período y escenario; $C_Inv$ y $C_x$  son los costos de inventario y producción para cada producto y periodo; $C_r$ costo de los recursos durante el horizonte de planificación; $P^s$ probabilidad para cada escenario con $∑_{s∈S}P^s =1$; $n_s(t)$  nodo en el árbol de escenarios correspondiente a cada escenario y período; $P(n_{s(t)})$ probabilidad de $n_{s(t)}$.
 Las variables de decisión del modelo son: $W_{i,r}^s$ son los recursos asignados a producción para cada planta y escenario, $Inv_{i,t}^s$ y $X_{i,t}^s$ unidades de inventario y piezas producidas cada planta, período y escenario.\
 
-Los archivos con extensión lg4 son de LINGO, para usar los archivos puede consultar su manual (https://www.lindo.com/index.php/help/user-manuals), la herística fue implementada en LINGO siendo MATE_HEURISTIC_SAA.
+Los archivos con extensión lg4 son de LINGO, para usar los archivos puede consultar su manual (https://www.lindo.com/index.php/help/user-manuals), la herística fue implementada en LINGO siendo MATE_HEURISTIC_SAA. Para hacer la selección de Benders en LINGO, se debe seleccionar el archivo lg4 20-50 Benders, y se hará los ajustes necesarios de acuerdo a la instancia a resolver.\
 
+Finalmente, se suben los archivos MPS para usar en NEOS (https://neos-server.org/neos/).\ 
+Si existe algo que se puede mejorar en cuanto a código, estoy abierto a recibir ayuda y retroalimentación.\
 
-
-
-
+Muchas gracias.
 ## Referencia
 Goméz-Rocha, José E. (2023). Un enfoque de solución a la integración del problema de plantas capacitadas con la planeación agregada de la producción bajo incertidumbre usando programación estocástica [Tesis para obtar al grado de Maestro en Ciencias de la Ingeniería]. Instituto Tecnológico y de Estudios Superiores de Monterrey.
