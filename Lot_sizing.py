@@ -10,8 +10,11 @@ from gurobipy import GRB
 import numpy as np
 import time
 
+#inicio tiempo
 inicio = time.time()
-Iteraciones = 100
+#Replicas SAA
+Iteraciones = 10
+#Donde se guardan los valores de funcion objetivo
 obj_values = []
 for h in range(Iteraciones):
     
@@ -20,6 +23,8 @@ for h in range(Iteraciones):
     S = 100
     Escenarios = range(S)
     Plantas = range(4)
+    
+    #paramteros capacidades de produccion
     MU1 = 12
     SIGMA1 = 1.1547
     MU2 = 12
@@ -27,8 +32,6 @@ for h in range(Iteraciones):
     MU3 = 15
     SIGMA3 = 2.8867
     Recursos = range(3)
-
-    #Parametros
     Demanda = np.array([[3473,3473,3473],
               [20220, 20220, 20220],
               [53895, 53895, 53895],
@@ -95,9 +98,11 @@ for h in range(Iteraciones):
 
 # Valor esperado
 print(f"Valor esperado es: {np.mean(obj_values)}")
+#Desviacion estandar
 print(f"Desviación estandar es: {np.std(obj_values)}")
 fin = time.time()
 t_total = fin-inicio 
+#tiempo total requerido
 print("Tiempo etotal:",t_total)
 
 
