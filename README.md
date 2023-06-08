@@ -42,7 +42,9 @@ Los subproblemas se definen como:\
 El segundo modelo consiste en la relajación de un problema multi-etapas a uno de dos
 etapas para planeación de producción (Lot-sizing), las variables de primer etapa son los recursos a
 usar previo al inicio de la producción.
-Se usa Gurubi y CPLEX.
+Se usa Gurubi y CPLEX.\
+Para el modelo multi-etapas se utiliza Lingo 20.0
+
 
 
 
