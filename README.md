@@ -26,6 +26,34 @@ Las restricciones de no anticipación se pueden formular como:
 $y_{i}^s = y_{i}^{s-1}\ ∀\ i \in I, s \geq 2$\
 $y_{i}^s = \sum_{s \in S}P^sy_{i}^s ∀\ i \in I$
 
+Se hace una implementación basada en la descomposición de Benders en Gurobi, la formulación matemática es la siguiente.\
+El problema maestro es:\
+\begin{equation}
+\begin{split}
+\min \sum_{s \in S}\sum_{i \in I}F_iy_{i}^s+\sum_{s \in S}P^s\theta^s
+\end{split}
+\end{equation}
+\begin{equation}
+\theta^s \geq - \sum_{s \in  S}\left[ \sum_{i \in I}k_i\overline{y_{i}^s}\pi_{i,O'}- \sum_{j \in J}D_{j}^s\pi_{j,O'}\right] \ \forall\ O' \in O, s \in S
+\end{equation}
+\begin{equation}
+y_{i}^s \in \{0,1\}
+\end{equation}
+Donde $\theta^s$ es un valor de corte para cada escenario $s$, $\overline{y_{i}^s}$ es el valor que se obtiene al resolver el problema maestro en cada iteración, $\pi_{i,O'}^s$ y $\pi_{j,O'}^s$ son los valores de la solución del subproblema obteniendo los puntos extremos del poliedro definidos como $O' \in O$\
+Los subproblemas se definen como:\
+\begin{equation}
+    \max\ - \sum_{s \in  S}\left[ \sum_{i \in I}k_i\overline{y_{i}^s}\pi_{i,O'}- \sum_{j \in J}D_{j}^s\pi_{j,O'}\right]
+\end{equation}
+\begin{equation}
+    \pi_{i,O'}-\pi_{j,O'} \leq C_{ij} \ \forall\ i \in I, j \in J, O' \in O 
+\end{equation}
+\begin{equation}
+    \pi_{j,O'} \leq BP \ \forall\ j \in J, O' \in O 
+\end{equation}
+\begin{equation}
+    \pi_{j,O'}, \pi_{i,O'} \geq 0 \ \forall i \in I, j \in J, O' \in O 
+\end{equation}
+
 El segundo modelo consiste en la relajación de un problema multi-etapas a uno de dos
 etapas para planeación de producción (Lot-sizing), las variables de primer etapa son los recursos a
 usar previo al inicio de la producción.
