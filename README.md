@@ -13,12 +13,6 @@ de segundo etapa corresponden a los envíos y las no entregas.
  Parámetros: $P^s$ es la probabilidad de que ocurra el escenario $s$, $C_{ij}$ el costo de enviar una unidad de una planta $i$ a un mercado $j$, la demanda $D_{j}^s)$  (variable aleatoria) en cada escenario $s$, cada planta tiene una capacidad $K_i$, con un costo operativo $F_i$ y $BP$ una penalidad por unidad no entregada al cliente $j$.\
 Variables de decisión: $x_{ij}^s$ la cantidad de productos a enviar de la planta $i$ al mercado $j$ en escenario $s$, $\rho_j^s$ unidades no entregadas al cliente $j$ en escenario $s$, $y_{i}^s$ tomando valor 1 si se abre una planta en escenario $s$.
 
-El problema a resolver es el siguiente:\
-$\min \sum_{i \in I}F_iy_i+P^s\left[ \sum_{i \in  I}\sum_{j \in J}c_{ij}x_{ij}^s+ \sum_{j \in J}BP\rho_j^s\right]$\
-Sujeto a:\
-$\rho_j^s \geq D_{j}^s- \sum_{i \in I}x_{ij}^s \ \forall j \in J, s\in S$\
-$\sum_{j \in J}x_{ij}^s\leq k_iy_i \ \forall i \in I, s\in S$\
-$y_i \in \{0,1\}, \rho_j^s \geq 0\ \forall\  j \in J, s\in S, x_{ij} \geq 0\ \forall\ i \in I, j \in J, s\in S $
 
 El problema a resolver es el siguiente:\
 $\min P^s\sum_{s \in S}\left[ \sum_{i \in I}F_iy_{i}^s + \sum_{i \in  I}\sum_{j \in J}C_{ij}x_{ij}^s+ \sum_{j \in J}BP\rho_j^s\right]$\
