@@ -27,6 +27,7 @@ Las restricciones de no anticipación se pueden formular como:
 $y_{i}^s = y_{i}^{s-1}\ ∀\ i \in I, s \geq 2$\
 $y_{i}^s = \sum_{s \in S}P^sy_{i}^s ∀\ i \in I$
 
+Se usa Gurobi (https://www.gurobi.com/) y CPLEX (https://www.ibm.com/mx-es/analytics/cplex-optimizer) mediante DOCPLEX (https://pypi.org/project/docplex/)
 Se hace una implementación basada en la descomposición de Benders en Gurobi, la formulación matemática es la siguiente.\
 El problema maestro es:
 $\min \sum_{s \in S}\sum_{i \in I}F_iy_{i}^s+\sum_{s \in S}P^s\theta^s$\
@@ -44,7 +45,7 @@ Los subproblemas se definen como:\
 El segundo modelo consiste en la relajación de un problema multi-etapas a uno de dos
 etapas para planeación de producción (Aggregate Production Planning), las variables de primer etapa son los recursos a
 usar previo al inicio de la producción.
-Se usa Gurubi y CPLEX.\
+Se usa Gurobi.\
 Para el modelo multi-etapas se utiliza Lingo 20.0, la formulación del modelo multi-etapas es la siguiente:
 
 $\min \sum_{s \in S}P^s\sum_{i \in \ I^{ci}}\sum_{r \in R}W_{i,r}^sC_r |T|+\sum_{s \in S}P^s\sum_{i \in \ I^{ci}}\sum_{t \in T}(X_{i,t}^sC_x+Inv_{i,t}^sC_{Inv})$\
