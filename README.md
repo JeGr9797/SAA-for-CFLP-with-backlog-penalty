@@ -58,11 +58,11 @@ $X_{t}^{s}, Inv_{i,t}^s, W_{i,r}^s \in \mathbb{Z}^+$
 
 Los índices del modelo son: $T$ conjunto de periodos con $t∈T$; $R$ conjunto de recursos con $r∈R$; $S$ conjunto de todos los escenarios con $s∈S$; $N_{s(t)}$  conjunto de escenarios que son indistinguibles de $s$ en el período $t$; $I^{ci}$ conjunto de plantas que se decidieron abrir en el SCFLP con $i ∈I^{ci}$.
 Los parámetros del modelo son: $d_{i,t}$ demanda para cada periodo y planta seleccionada; $Inv_{i,0}$ es el inventario inicial en cada planta; $α_r^s$ la tasa de producción para cada recurso (recursos producidos por trabajador para actividad específica en unidad de tiempo), período y escenario; $C_Inv$ y $C_x$  son los costos de inventario y producción para cada producto y periodo; $C_r$ costo de los recursos durante el horizonte de planificación; $P^s$ probabilidad para cada escenario con $∑_{s∈S}P^s =1$; $n_s(t)$  nodo en el árbol de escenarios correspondiente a cada escenario y período; $P(n_{s(t)})$ probabilidad de $n_{s(t)}$.
-Las variables de decisión del modelo son: $W_{i,r}^s$ son los recursos asignados a producción para cada planta y escenario, $Inv_{i,t}^s$ y $X_{i,t}^s$ unidades de inventario y piezas producidas cada planta, período y escenario.\
+Las variables de decisión del modelo son: $W_{i,r}^s$ son los recursos asignados a producción para cada planta y escenario, $Inv_{i,t}^s$ y $X_{i,t}^s$ unidades de inventario y piezas producidas cada planta, período y escenario.
 
-Los archivos con extensión lg4 son de LINGO, para usar los archivos puede consultar su manual (https://www.lindo.com/index.php/help/user-manuals), la herística fue implementada en LINGO siendo MATE_HEURISTIC_SAA. Para hacer la selección de Benders en LINGO, se debe seleccionar el archivo lg4 20-50 Benders, y se hará los ajustes necesarios de acuerdo a la instancia a resolver.\
+Los archivos con extensión lg4 son de LINGO, para usar los archivos puede consultar su manual (https://www.lindo.com/index.php/help/user-manuals), la herística fue implementada en LINGO siendo MATE_HEURISTIC_SAA. Para hacer la selección de Benders en LINGO, se debe seleccionar el archivo lg4 20-50 Benders, y se hará los ajustes necesarios de acuerdo a la instancia a resolver, el modelo de APP se sube para la solución de 20-50a, pero se puede adecuar para las otras instancias siguiendo la tesis.
 
-Finalmente, se suben los archivos MPS para usar en NEOS (https://neos-server.org/neos/), Si existe algo que se puede mejorar en cuanto a código, estoy abierto a recibir ayuda y retroalimentación.\
+Finalmente, se suben los archivos MPS de las instancias 20-50 para usar en NEOS (https://neos-server.org/neos/), si deseas pedir los otros por favor escribe a mi correo (emmanuel.gr@tec.mx o a01662477@tec.mx), Si existe algo que se puede mejorar en cuanto a código, estoy abierto a recibir ayuda y retroalimentación.
 
 Muchas gracias.
 ## Referencia
