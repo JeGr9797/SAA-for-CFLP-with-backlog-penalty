@@ -1,4 +1,4 @@
-# SAA-for-CFLP-with-backlog-penalty-and-Lot-sizing
+# SAA para CFLP con retrasos y APP
 Hola, en este repositorio vienen los códigos que se usaron para resolver los modelos 
 de optimización correspondientes a mi tesis de maestría en Tecnológico de Monterrey,
 consisten en una serie de modelos base que pueden modificarse a gusto de quien 
