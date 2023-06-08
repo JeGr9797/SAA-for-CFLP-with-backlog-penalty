@@ -15,7 +15,8 @@ inicio = time.time()
 Iteraciones = 20
 obj_values = []
 for h in range(Iteraciones):
-    #Leer informacion
+    #Leer informacion de costos c_ij
+    #Aqui el path cambia donde se guarde el archivo excel
     df1 = pd.read_excel(r"C:\Users\jegr9\OneDrive\Escritorio\MCI\Tesis\Test SCFLP\20-50 Benders\20­50a.xlsx", sheet_name=1,usecols="A:AX",nrows=20)
 
     # Definir constantes del modelo
@@ -86,12 +87,6 @@ for h in range(Iteraciones):
     #restricciones de no anticipacion
     m.addConstrs(y[i,k]==y[i,k-1] for i in plantas for k in escenarios if k >= 1)
 
-    #concurrente
-    #m.Params.Method = 4
-
-    #Fuerza de cortes en el Branch-and-Cut
-    #cut = 3
-
     #Gap
     m.setParam('MIPGap', 0.0)
 
@@ -103,9 +98,11 @@ for h in range(Iteraciones):
 
 # Valor esperado
 print(f"Valor esperado es: {np.mean(obj_values)}")
+# Desviacion estandar
 print(f"Desviación estandar es: {np.std(obj_values)}")
 fin = time.time()
-t_total = fin-inicio 
+t_total = fin-inicio
+#Tiempo total
 print("Tiempo total:",t_total)
 
 
