@@ -5,17 +5,22 @@
 
 
 import numpy as np
+import sys
 import cplex
 from docplex.mp.model import Model
 import pandas as pd
 import time
 
 #Iniciar parametros
+#Tiempo
 inicio = time.time()
+#Replicas SAA
 Iteraciones = 20
+#Aquí se guardan valores de funcion objetivo
 obj_values = []
 for h in range(Iteraciones):
-    #Leer informacion
+    #Leer informacion de costos c_ij
+    #Aqui el path cambia donde se guarde el archivo excel
     df1 = pd.read_excel(r"C:\Users\jegr9\OneDrive\Escritorio\MCI\Tesis\Test SCFLP\20-50 Benders\20­50a.xlsx", sheet_name=1,usecols="A:AX",nrows=20)
 
     # Definir constantes del modelo
@@ -54,11 +59,10 @@ for h in range(Iteraciones):
     d_j = np.array([np.random.normal(mu[i], sigma[i], K) for i in range(mu.shape[0])])
 
 
-    #probabilidad escenario
+        #probabilidad escenario
     p = np.array([1.0/K]*K) 
     #Nombre y sentido del porblema
-    m = Model(name='my_model')
-    #m.minimize() 
+    m = Model(name='SAA',log_output=True)
 
     #definir conjuntos
     plantas = range(I)
@@ -87,30 +91,23 @@ for h in range(Iteraciones):
     #restricciones de no anticipacion
     m.add_constraints(y[i,k]==y[i,k-1] for i in plantas for k in escenarios if k >= 1)
 
-
+    #Aplicar descomposición de Benders
+    m.parameters.benders.strategy = 3
     # Resolver
     m.solve()
+
     #Guardar soluciones objetivo y actualizar
     obj_sample = m.objVal
     obj_values.append(obj_sample)
 
 # Valor esperado
 print(f"Valor esperado es: {np.mean(obj_values)}")
+#Desviacion estandar
 print(f"Desviación estandar es: {np.std(obj_values)}")
 fin = time.time()
-t_total = fin-inicio 
+t_total = fin-inicio
+#Tiempo requerido solucion
 print("Tiempo total:",t_total)
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
 
 
 
