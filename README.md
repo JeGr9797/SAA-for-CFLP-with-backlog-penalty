@@ -62,8 +62,7 @@ Las variables de decisión del modelo son: $W_{i,r}^s$ son los recursos asignado
 
 Los archivos con extensión lg4 son de LINGO, para usar los archivos puede consultar su manual (https://www.lindo.com/index.php/help/user-manuals), la herística fue implementada en LINGO siendo MATE_HEURISTIC_SAA. Para hacer la selección de Benders en LINGO, se debe seleccionar el archivo lg4 20-50 Benders, y se hará los ajustes necesarios de acuerdo a la instancia a resolver.\
 
-Finalmente, se suben los archivos MPS para usar en NEOS (https://neos-server.org/neos/).\ 
-Si existe algo que se puede mejorar en cuanto a código, estoy abierto a recibir ayuda y retroalimentación.\
+Finalmente, se suben los archivos MPS para usar en NEOS (https://neos-server.org/neos/), Si existe algo que se puede mejorar en cuanto a código, estoy abierto a recibir ayuda y retroalimentación.\
 
 Muchas gracias.
 ## Referencia
