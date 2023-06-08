@@ -9,6 +9,7 @@ modelo es formulado como uno de programación estocástica de dos etapas, donde 
 variables de decisión de primer etapa son que plantas abrir (variables binarias), las 
 de segundo etapa corresponden a los envíos y las no entregas.
 
+## CFLP con retrasos
 índices:  $i \in I$ el conjunto de plantas que se pueden abrir, $j \in J$ el conjunto de mercados que deben ser satisfechos, $s \in S$ el conjunto de los escenarios de las posibles realizaciones.\
  Parámetros: $P^s$ es la probabilidad de que ocurra el escenario $s$, $C_{ij}$ el costo de enviar una unidad de una planta $i$ a un mercado $j$, la demanda $D_{j}^s)$  (variable aleatoria) en cada escenario $s$, cada planta tiene una capacidad $K_i$, con un costo operativo $F_i$ y $BP$ una penalidad por unidad no entregada al cliente $j$.\
 Variables de decisión: $x_{ij}^s$ la cantidad de productos a enviar de la planta $i$ al mercado $j$ en escenario $s$, $\rho_j^s$ unidades no entregadas al cliente $j$ en escenario $s$, $y_{i}^s$ tomando valor 1 si se abre una planta en escenario $s$.
@@ -39,8 +40,9 @@ Los subproblemas se definen como:\
     $\pi_{j,O'}, \pi_{i,O'} \geq 0 \ \forall i \in I, j \in J, O' \in O$\ 
 
 
+## APP
 El segundo modelo consiste en la relajación de un problema multi-etapas a uno de dos
-etapas para planeación de producción (Lot-sizing), las variables de primer etapa son los recursos a
+etapas para planeación de producción (Aggregate Production Planning), las variables de primer etapa son los recursos a
 usar previo al inicio de la producción.
 Se usa Gurubi y CPLEX.\
 Para el modelo multi-etapas se utiliza Lingo 20.0, la formulación del modelo multi-etapas es la siguiente:
