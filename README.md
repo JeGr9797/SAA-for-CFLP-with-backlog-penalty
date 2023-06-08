@@ -12,3 +12,6 @@ El segundo modelo consiste en la relajación de un problema multi-etapas a uno d
 etapas para planeación de producción (Lot-sizing), las variables de primer etapa son los recursos a
 usar previo al inicio de la producción.
 Se usa Gurubi y CPLEX.
+
+##Referencia
+Goméz-Rocha, José E. (2023). Un enfoque de solución a la integración del problema de plantas capacitadas con la planeación agregada de la producción bajo incertidumbre usando programación estocástica [Tesis para obtar al grado de Maestro en Ciencias de la Ingeniería]. Instituto Tecnológico y de Estudios Superiores de Monterrey.
