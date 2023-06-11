@@ -11,7 +11,7 @@ de segundo etapa corresponden a los envíos y las no entregas.
 
 ## CFLP con retrasos
 índices:  $i \in I$ el conjunto de plantas que se pueden abrir, $j \in J$ el conjunto de mercados que deben ser satisfechos, $s \in S$ el conjunto de los escenarios de las posibles realizaciones.\
- Parámetros: $P^s$ es la probabilidad de que ocurra el escenario $s$, $C_{ij}$ el costo de enviar una unidad de una planta $i$ a un mercado $j$, la demanda $D_{j}^s)$  (variable aleatoria) en cada escenario $s$, cada planta tiene una capacidad $K_i$, con un costo operativo $F_i$ y $BP$ una penalidad por unidad no entregada al cliente $j$.\
+ Parámetros: $P^s$ es la probabilidad de que ocurra el escenario $s$, $C_{ij}$ el costo de enviar una unidad de una planta $i$ a un mercado $j$, la demanda $D_{j}^s$  (variable aleatoria) en cada escenario $s$, cada planta tiene una capacidad $K_i$, con un costo operativo $F_i$ y $BP$ una penalidad por unidad no entregada al cliente $j$.\
 Variables de decisión: $x_{ij}^s$ la cantidad de productos a enviar de la planta $i$ al mercado $j$ en escenario $s$, $\rho_j^s$ unidades no entregadas al cliente $j$ en escenario $s$, $y_{i}^s$ tomando valor 1 si se abre una planta en escenario $s$.
 
 
